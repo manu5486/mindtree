@@ -1,0 +1,23 @@
+Terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"g
+version = "3.74.0"
+    }
+  }
+}
+
+provider "aws" {
+region     = "us-east-1"
+  access_key = "AKIAYXHHY2PQAM6YD7XV"
+secret_key = "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"
+}
+
+resource "aws_instance" "WebTerra" {
+  ami= "ami-06c5477350a5489ee"
+  instance_type = "t2.micro"
+  key_name      = "RSAkey"
+   
+  tags = {
+    Name = "WebTerra"
+  }
